@@ -1,0 +1,12 @@
+export ARCH=arm
+export SUBARCH=arm
+export CROSS_COMPILE=~/android/toolchain/ak/bin/arm-eabi-
+make mako_defconfig
+make menuconfig
+make -o3 -o -fmodulo-sched -o -fmodulo-sched-allow-regmoves -Wl,--hash-style=gnu -Werror=strict-aliasing -j$(grep -c ^processor /proc/cpuinfo)
+
+
+export ARCH=arm ; export SUBARCH=arm ; export CROSS_COMPILE=~/android/toolchain/arm-eabi-4.7/bin/arm-eabi- ; make mako_defconfig ; make menuconfig ; make -o3 -o -fmodulo-sched -o -fmodulo-sched-allow-regmoves -Wl,--hash-style=gnu -Werror=strict-aliasing -j$(grep -c ^processor /proc/cpuinfo)
+
+export ARCH=arm ; export SUBARCH=arm ; export CROSS_COMPILE=~/android/toolchain/ak/bin/arm-linux-gnueabihf- ; make mako_defconfig ; make menuconfig ; make -o3 -o -fmodulo-sched -o -fmodulo-sched-allow-regmoves -Wl,--hash-style=gnu -Werror=strict-aliasing -j$(grep -c ^processor /proc/cpuinfo)
+

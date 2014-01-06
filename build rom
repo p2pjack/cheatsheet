@@ -1,0 +1,5 @@
+. build/envsetup.sh
+lunch
+make -o3 -o -fmodulo-sched -o -fmodulo-sched-allow-regmoves -Wl,--hash-style=gnu -Werror=strict-aliasing otapackage -j$(grep -c ^processor /proc/cpuinfo)
+
+make clobber ; repo sync ; . build/envsetup.sh ; lunch ; make -o3 -o -fmodulo-sched -o -fmodulo-sched-allow-regmoves -Wl,--hash-style=gnu -Werror=strict-aliasing otapackage -j$(grep -c ^processor /proc/cpuinfo)
